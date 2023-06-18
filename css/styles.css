@@ -5,7 +5,8 @@
     --brand-bright-color: #4D5AE5;  /*logo, filter txt*/
     --prod-overlay-color: rgba(77, 90, 229, 0.5); /*product overlay color*/
     --light-bg: #F4F4FD;  /*light background for section and  filter buttons*/
-    --content-txt-color: #434455;  /* content text color*/
+    --content-txt-color: #434455;
+    --agr-txt-color: #8e8f99; /* content text color*/
     --focus-btn-color: #404BBF;   /* focus button color*/
     --focus-footer-s-m: #31d0aa; /*focus footer social media color*/
     --logo-font: 'Raleway', sans-serif;
@@ -263,10 +264,11 @@ body{
     font-weight: 500;
     line-height: 1.5;
     font-size: 16px;
-    color: #FFFFFF;
+    color: var(--body-color);
     letter-spacing: 0.04em;
     border: none;
-    background: var(--brand-bright-color);
+    background-color: var(--brand-bright-color);
+    border: none;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
     border-radius: 4px;
     padding: 16px 32px;
@@ -296,12 +298,7 @@ body{
     border-radius: 4px;
     margin-bottom: 8px;
 }
-
-
-
 /* ============<!-- /PRIORITIES -->====== */
-
-
 
 .card{
     background-color: #FFFFFF;
@@ -738,6 +735,7 @@ border-radius: 0px 0px 4px 4px;
 }
 .modal-lbl-container{
     margin-bottom: 8px;
+    width: 100%;
 }
 .modal-form{
     display: flex;
@@ -747,29 +745,28 @@ border-radius: 0px 0px 4px 4px;
     align-items: center;
    /* justify-content: center;*/
 }
-.mdl-form-tag{
+
+.mdl-form-field{
+    width: 100%;
     display: block;
-    font-family: 'Roboto';
-    font-weight: 400;
     font-size: 12px;
     line-height: 1.17;
     letter-spacing: 0.04em;
     color: #8E8F99;
     margin-bottom: 4px;
-}
-.mdl-form-field{
-    width: 100%;
     padding-left: 0px;
     padding-right: 0px;
     margin-bottom: 8px;
 }
 .mdl-form-input{
     width: 100%;
+    height: 40px;
     border: 1px solid rgba(46, 47, 66, 0.4);
     border-radius: 4px;
-    height: 40px;
+    background-color: transparent;
     padding-left: 38px;
     color: #000000;
+    outline: transparent;
     transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .mdl-form-input:focus{
@@ -784,14 +781,22 @@ border-radius: 0px 0px 4px 4px;
     width: 100%;
     resize: none;
     height: 120px;
-    
-    color: #000000;
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: 0.04em;
+    color: rgba(46, 47, 66, 0.4);
     border: 1px solid rgba(46, 47, 66, 0.4);
+    background-color: transparent;
     border-radius: 4px;
     padding-top: 8px;
     padding-right: 16px;
     padding-left: 16px;
+    padding-bottom: 8px;
+    outline: transparent;
     transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.mdl-form-comment-gap{
+    margin-bottom: 16px;
 }
 .mdl-form-comment::placeholder{
     font-weight: 400;
@@ -811,12 +816,15 @@ border-radius: 0px 0px 4px 4px;
 .mdl-form-icon{
     position:absolute;
     top: 50%;
-    transform: translate(0, -50%);
+    transform: translateY(-50%);
     left: 16px;
     display: block;
     width: 18px;
     height: 24px;
     transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.terms-of-agr{
+    margin-bottom: 24px;
 }
 
 .fakecheckbox{
@@ -828,19 +836,31 @@ border-radius: 0px 0px 4px 4px;
     border-radius: 2px;
     justify-content: center;
     align-items: center;
-    
+    fill: transparent;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), 
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1), fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .modal-form-agr{
     font-weight: 400;
     font-size: 12px;
     line-height: 1.17;
     letter-spacing: 0.04em;
-    color: #8E8F99;
+    color: var(--agr-txt-color);
     margin-bottom: 24px;
     cursor: pointer;
     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 input:checked + .modal-form-agr>.fakecheckbox{
     background-color: var(--focus-btn-color);
+    border: none;
+    fill: var(--light-bg);
 
+}
+.chbox-icon{
+    fill: var(--light-bg);
+    width: 10px;
+    height: 8px;
+}
+.terms-txt{
+    color: var(--brand-bright-color);
 }
