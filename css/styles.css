@@ -172,6 +172,7 @@ body{
 }
 .is-active {
     position: relative;
+    color: var(--focus-btn-color);
 }
 
 .is-active::after {
