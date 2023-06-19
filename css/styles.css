@@ -168,7 +168,7 @@ body{
 }
 .menu-link:hover,
 .menu-link:focus{
-    color: var(--focus-btn-color)
+    color: var(--focus-btn-color);
 }
 .is-active {
     position: relative;
